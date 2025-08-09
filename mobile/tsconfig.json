@@ -1,0 +1,12 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "disableReferencedProjectLoad": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "App.tsx", "index.ts"],
+  "exclude": ["node_modules"]
+}
