@@ -3,3 +3,5 @@ djangorestframework
 django-cors-headers
 pymysql
 python-dotenv
+Pillow
+tensorflow
