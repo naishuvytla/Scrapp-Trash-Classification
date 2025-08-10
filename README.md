@@ -1,10 +1,14 @@
 # Scrapp-Trash-Classification
 
-![Login Page] (assets/screenshots/login.png)
-![Sign Up Page] (assets/screenshots/signup.png)
-![Home Page] (assets/screenshots/home.png)
-![Scan Trash Page] (assets/screenshots/scantrash.png)
-![Result Page] (assets/screenshots/result.png)
-![Chatbot Page] (assets/screenshots/chat.png)
-![Community Page] (assets/screenshots/community.png)
-![Create Post Page] (assets/screenshots/createpost.png)
+<p align="center">
+  <img src="mobile/assets/screenshots/login.png" width="225" />
+  <img src="mobile/assets/screenshots/signup.png" width="225" />
+  <img src="mobile/assets/screenshots/home.png" width="225" />
+  <img src="mobile/assets/screenshots/scantrash.png" width="225" />
+</p>
+<p align="center">
+  <img src="mobile/assets/screenshots/result.png" width="225" />
+  <img src="mobile/assets/screenshots/chat.png" width="225" />
+  <img src="mobile/assets/screenshots/community.png" width="225" />
+  <img src="mobile/assets/screenshots/newpost.png" width="225" />
+</p>
