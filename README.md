@@ -1,0 +1,1 @@
+# Scrapp-Trash-Classification
