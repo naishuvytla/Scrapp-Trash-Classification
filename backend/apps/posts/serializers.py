@@ -1,4 +1,3 @@
-# apps/posts/serializers.py
 from rest_framework import serializers
 from .models import Post
 
@@ -14,7 +13,6 @@ class PostSerializer(serializers.ModelSerializer):
         return obj.get_category_display()
 
     def create(self, validated_data):
-        # Attach request.user as author if you do token auth
         request = self.context.get('request')
         if request and request.user and request.user.is_authenticated:
             validated_data['author'] = request.user

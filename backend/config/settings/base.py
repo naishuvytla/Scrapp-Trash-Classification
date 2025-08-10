@@ -2,14 +2,14 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
-BASE_DIR = Path(__file__).resolve().parents[2]  # points to scrapp/
+BASE_DIR = Path(__file__).resolve().parents[2] 
 DJANGO_ENV = os.getenv('DJANGO_ENV', 'dev')
 load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'dev-secret-not-for-prod')
 DEBUG = os.getenv('DEBUG', '1') == '1'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost,192.168.86.40').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -18,11 +18,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 3rd party
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    # local apps
     'apps.users',
     'apps.posts',
     'classifier',

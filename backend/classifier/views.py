@@ -10,14 +10,12 @@ try:
     from pillow_heif import register_heif_opener
     register_heif_opener()
 except Exception:
-    pass  # if not installed, it's fine; JPEG/PNG will still work
+    pass 
 
-# Avoid issues with slightly truncated JPEGs
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-# === Model + labels load once at import ===
 HERE = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.dirname(HERE)  # .../backend
+BASE_DIR = os.path.dirname(HERE)  
 EXPORT_DIR = os.path.join(BASE_DIR, "export")
 MODEL_PATH = os.path.join(EXPORT_DIR, "scrapp-trash-model.keras")
 LABELS_PATH = os.path.join(EXPORT_DIR, "labels.txt")
@@ -77,7 +75,6 @@ def classify(request):
     if not file:
         return JsonResponse({"error": "Missing 'image' file (multipart/form-data)."}, status=400)
 
-    # DEBUG: log what we received
     try:
         print("upload name:", getattr(file, "name", None))
         print("content_type:", getattr(file, "content_type", None))
@@ -86,7 +83,6 @@ def classify(request):
         pass
 
     try:
-        # Read the raw bytes first, then open via BytesIO (more reliable than passing the file object)
         raw = file.read()
         pil_img = Image.open(io.BytesIO(raw))
         x = _preprocess(pil_img)

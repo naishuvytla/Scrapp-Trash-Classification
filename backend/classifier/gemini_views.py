@@ -11,7 +11,6 @@ if not GEMINI_API_KEY:
     raise RuntimeError("GEMINI_API_KEY is not set")
 genai.configure(api_key=GEMINI_API_KEY)
 
-# Use a fast model; you can switch to "gemini-1.5-pro" if you want more reasoning.
 MODEL = genai.GenerativeModel("gemini-1.5-flash")
 
 SYSTEM_GUIDE = (
@@ -34,12 +33,11 @@ def disposal_chat(request):
     message: str = body.get("message", "").strip()
     label: str | None = body.get("label")
     instructions: str | None = body.get("instructions")
-    history = body.get("history", [])  # [{role:"user"|"assistant", content:"..."}]
+    history = body.get("history", []) 
 
     if not message:
         return JsonResponse({"error": "Field 'message' is required."}, status=400)
 
-    # Build the prompt with lightweight grounding from classification
     context_bits = []
     if label:
         context_bits.append(f"Predicted category: {label}")
@@ -47,9 +45,8 @@ def disposal_chat(request):
         context_bits.append(f"Recommended steps: {instructions}")
     context = "\n".join(context_bits) if context_bits else "No prior classification context."
 
-    # Convert simple history to Gemini's format
     gemini_history = []
-    for turn in history[-10:]:  # last 10 turns max
+    for turn in history[-10:]: 
         role = "user" if turn.get("role") == "user" else "model"
         gemini_history.append({"role": role, "parts": [{"text": turn.get("content", "")}]})
 

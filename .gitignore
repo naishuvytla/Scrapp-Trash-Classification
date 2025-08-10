@@ -1,22 +1,37 @@
-# Python
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Python / Django
 __pycache__/
 *.py[cod]
 *.egg-info/
-*.log
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# Virtual envs
-venv/
+# env & secrets
 .env
 backend/.env
 mobile/.env
 
-# Django
+# sqlite (adjust path if needed)
 backend/db/*.sqlite3
 
-# Node / RN
+# user uploads / collected static (if you have these dirs)
+backend/media/
+backend/staticfiles/
+
+# Node / Expo / React Native
 node_modules/
 mobile/node_modules/
 mobile/.expo/
+mobile/.expo-shared/
+mobile/.cache/
 mobile/dist/
 mobile/web-build/
 mobile/.metro-health-check*
@@ -24,17 +39,32 @@ mobile/npm-debug.*
 mobile/yarn-debug.*
 mobile/yarn-error.*
 mobile/*.tsbuildinfo
+mobile/.turbo/
 
-# iOS / Android
-mobile/ios/Pods/
-mobile/ios/build/
+# Android
 mobile/android/.gradle/
+mobile/android/build/
 mobile/android/app/build/
+mobile/android/local.properties
+mobile/android/*.iml
+mobile/android/.idea/
+
+# iOS
+mobile/ios/build/
+mobile/ios/DerivedData/
+mobile/ios/Pods/
+mobile/ios/*.xcworkspace/xcuserdata/
+mobile/ios/*.xcuserdatad/
+mobile/ios/*.xcuserstate
+mobile/ios/.xcode.env
+mobile/ios/.xcode.env.local
+
+# Mobile secrets
+mobile/**/GoogleService-Info.plist
+mobile/**/google-services.json
 *.jks
+*.keystore
 *.p8
 *.p12
 *.key
 *.mobileprovision
-
-# macOS
-.DS_Store

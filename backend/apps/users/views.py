@@ -7,7 +7,6 @@ from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny
 
-# REGISTER VIEW
 class RegisterView(APIView):
     permission_classes = [AllowAny]
 
@@ -27,7 +26,6 @@ class RegisterView(APIView):
         return Response({'token': token.key, 'message': 'User registered successfully'}, status=status.HTTP_201_CREATED)
 
 
-# LOGIN VIEW
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
