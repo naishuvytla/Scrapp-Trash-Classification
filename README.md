@@ -1,4 +1,4 @@
-# Scrapp-Trash-Classification
+# Welcome to Scrapp!
 
 <p align="center">
   <img src="mobile/assets/screenshots/login.png" width="200" />
